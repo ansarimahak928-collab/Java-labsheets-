@@ -1,0 +1,778 @@
+/* ==========================================================
+   COER UNIVERSITY - BCA III SEMESTER (2026-2027)
+   BCA201P: FOUNDATIONS OF JAVA DEVELOPMENT - LAB SHEET 02
+   All 30 Separate Standalone Programs (Clean Spacing Version)
+   ========================================================== */
+
+
+
+// Q1. Area of Triangle using Heron's Formula
+
+import java.util.Scanner;
+
+public class Lab02_Q01 {
+    public static void main(String[] args) {
+        Scanner sc = new Scanner(System.in);
+        System.out.println("--- Q1: Area of Triangle using Heron's Formula ---");
+        System.out.print("Enter side a: ");
+        double a = sc.nextDouble();
+        System.out.print("Enter side b: ");
+        double b = sc.nextDouble();
+        System.out.print("Enter side c: ");
+        double c = sc.nextDouble();
+
+        if ((a + b > c) && (a + c > b) && (b + c > a)) {
+            double s = (a + b + c) / 2.0;
+            double area = Math.sqrt(s * (s - a) * (s - b) * (s - c));
+            System.out.println("Area of the triangle: " + area);
+        } else {
+            System.out.println("Invalid triangle sides!");
+        }
+        sc.close();
+    }
+}
+
+
+
+// Q2. Compound Interest Calculation
+
+import java.util.Scanner;
+
+public class Lab02_Q02 {
+    public static void main(String[] args) {
+        Scanner sc = new Scanner(System.in);
+        System.out.println("--- Q2: Compound Interest Calculation ---");
+        System.out.print("Enter Principal amount: ");
+        double p = sc.nextDouble();
+        System.out.print("Enter Annual Interest Rate (in %): ");
+        double r = sc.nextDouble();
+        System.out.print("Enter Time (in years): ");
+        double t = sc.nextDouble();
+        System.out.print("Enter number of times interest is compounded per year: ");
+        int n = sc.nextInt();
+
+        double amount = p * Math.pow(1 + (r / (100 * n)), n * t);
+        double ci = amount - p;
+        System.out.println("Total Amount: " + amount);
+        System.out.println("Compound Interest: " + ci);
+        sc.close();
+    }
+}
+
+
+
+// Q3. Distance Between Two Points in 2D Plane
+
+import java.util.Scanner;
+
+public class Lab02_Q03 {
+    public static void main(String[] args) {
+        Scanner sc = new Scanner(System.in);
+        System.out.println("--- Q3: Distance Between Two Points in 2D Plane ---");
+        System.out.print("Enter x1, y1: ");
+        double x1 = sc.nextDouble();
+        double y1 = sc.nextDouble();
+        System.out.print("Enter x2, y2: ");
+        double x2 = sc.nextDouble();
+        double y2 = sc.nextDouble();
+
+        double distance = Math.sqrt(Math.pow(x2 - x1, 2) + Math.pow(y2 - y1, 2));
+        System.out.println("Distance between points: " + distance);
+        sc.close();
+    }
+}
+
+
+
+// Q4. Prefix and Postfix Increment Counter
+
+import java.util.Scanner;
+
+public class Lab02_Q04 {
+    public static void main(String[] args) {
+        Scanner sc = new Scanner(System.in);
+        System.out.println("--- Q4: Prefix and Postfix Increment Counter ---");
+        int visitors = 100;
+        System.out.println("Initial store visitors: " + visitors);
+        
+        System.out.println("A visitor enters (postfix visitors++): " + (visitors++));
+        System.out.println("Visitors count after postfix: " + visitors);
+        
+        System.out.println("Another visitor enters (prefix ++visitors): " + (++visitors));
+        System.out.println("Visitors count after prefix: " + visitors);
+        sc.close();
+    }
+}
+
+
+
+// Q5. Negative Value using Unary Operator
+
+import java.util.Scanner;
+
+public class Lab02_Q05 {
+    public static void main(String[] args) {
+        Scanner sc = new Scanner(System.in);
+        System.out.println("--- Q5: Negative Value using Unary Operator ---");
+        System.out.print("Enter an integer: ");
+        int num = sc.nextInt();
+        int negNum = -num;
+        System.out.println("Original value: " + num);
+        System.out.println("Negative value: " + negNum);
+        sc.close();
+    }
+}
+
+
+
+// Q6. Gradually Reduce Number by Half using /=
+
+import java.util.Scanner;
+
+public class Lab02_Q06 {
+    public static void main(String[] args) {
+        Scanner sc = new Scanner(System.in);
+        System.out.println("--- Q6: Gradually Reduce Number by Half using /= ---");
+        System.out.print("Enter a starting number: ");
+        double num = sc.nextDouble();
+        int steps = 0;
+
+        while (num >= 1.0) {
+            System.out.println("Step " + (steps + 1) + ": Value = " + num);
+            num /= 2.0;
+            steps++;
+        }
+        System.out.println("Total steps until value became less than 1: " + steps);
+        sc.close();
+    }
+}
+
+
+
+// Q7. Accumulate Rainfall Data for 7 Days
+
+import java.util.Scanner;
+
+public class Lab02_Q07 {
+    public static void main(String[] args) {
+        Scanner sc = new Scanner(System.in);
+        System.out.println("--- Q7: Accumulate Rainfall Data for 7 Days ---");
+        double totalRainfall = 0;
+        for (int i = 1; i <= 7; i++) {
+            System.out.print("Enter rainfall for Day " + i + " (in mm): ");
+            double rain = sc.nextDouble();
+            totalRainfall += rain;
+        }
+        System.out.println("Total rainfall over 7 days: " + totalRainfall + " mm");
+        sc.close();
+    }
+}
+
+
+
+// Q8. Valid Triangle Check using Angles
+
+import java.util.Scanner;
+
+public class Lab02_Q08 {
+    public static void main(String[] args) {
+        Scanner sc = new Scanner(System.in);
+        System.out.println("--- Q8: Valid Triangle Check using Angles ---");
+        System.out.print("Enter angle 1: ");
+        double a1 = sc.nextDouble();
+        System.out.print("Enter angle 2: ");
+        double a2 = sc.nextDouble();
+        System.out.print("Enter angle 3: ");
+        double a3 = sc.nextDouble();
+
+        boolean isValid = (a1 > 0 && a2 > 0 && a3 > 0) && ((a1 + a2 + a3) == 180);
+        if (isValid) {
+            System.out.println("The given angles form a valid triangle.");
+        } else {
+            System.out.println("The given angles do NOT form a valid triangle.");
+        }
+        sc.close();
+    }
+}
+
+
+
+// Q9. Lexicographic String Comparison without built-ins
+
+import java.util.Scanner;
+
+public class Lab02_Q09 {
+    public static void main(String[] args) {
+        Scanner sc = new Scanner(System.in);
+        System.out.println("--- Q9: Lexicographic String Comparison without built-ins ---");
+        System.out.print("Enter first string: ");
+        String s1 = sc.next();
+        System.out.print("Enter second string: ");
+        String s2 = sc.next();
+
+        int len1 = s1.length();
+        int len2 = s2.length();
+        int minLen = Math.min(len1, len2);
+        boolean compared = false;
+
+        for (int i = 0; i < minLen; i++) {
+            char c1 = s1.charAt(i);
+            char c2 = s2.charAt(i);
+            if (c1 != c2) {
+                if (c1 < c2) {
+                    System.out.println("'" + s1 + "' comes before '" + s2 + "' lexicographically.");
+                } else {
+                    System.out.println("'" + s2 + "' comes before '" + s1 + "' lexicographically.");
+                }
+                compared = true;
+                break;
+            }
+        }
+        if (!compared) {
+            if (len1 < len2) {
+                System.out.println("'" + s1 + "' comes before '" + s2 + "' lexicographically.");
+            } else if (len1 > len2) {
+                System.out.println("'" + s2 + "' comes before '" + s1 + "' lexicographically.");
+            } else {
+                System.out.println("Both strings are identical.");
+            }
+        }
+        sc.close();
+    }
+}
+
+
+
+// Q10. Leap Year and Range Check
+
+import java.util.Scanner;
+
+public class Lab02_Q10 {
+    public static void main(String[] args) {
+        Scanner sc = new Scanner(System.in);
+        System.out.println("--- Q10: Leap Year and Range Check ---");
+        System.out.print("Enter a year: ");
+        int year = sc.nextInt();
+        System.out.print("Enter range start year: ");
+        int start = sc.nextInt();
+        System.out.print("Enter range end year: ");
+        int end = sc.nextInt();
+
+        boolean isLeap = (year % 4 == 0 && year % 100 != 0) || (year % 400 == 0);
+        boolean inRange = (year >= start && year <= end);
+
+        if (isLeap && inRange) {
+            System.out.println(year + " is a leap year AND is within the specified range [" + start + ", " + end + "].");
+        } else {
+            System.out.println(year + " fails the combined condition.");
+        }
+        sc.close();
+    }
+}
+
+
+
+// Q11. Course Pass Criteria Check
+
+import java.util.Scanner;
+
+public class Lab02_Q11 {
+    public static void main(String[] args) {
+        Scanner sc = new Scanner(System.in);
+        System.out.println("--- Q11: Course Pass Criteria Check ---");
+        System.out.print("Enter theory percentage: ");
+        double theory = sc.nextDouble();
+        System.out.print("Enter practical percentage: ");
+        double practical = sc.nextDouble();
+        System.out.print("Enter overall percentage: ");
+        double overall = sc.nextDouble();
+
+        boolean pass = (theory >= 40 && practical >= 50) || (overall >= 50);
+        if (pass) {
+            System.out.println("Result: PASS");
+        } else {
+            System.out.println("Result: FAIL");
+        }
+        sc.close();
+    }
+}
+
+
+
+// Q12. Smallest of Four Numbers using Nested Ternary
+
+import java.util.Scanner;
+
+public class Lab02_Q12 {
+    public static void main(String[] args) {
+        Scanner sc = new Scanner(System.in);
+        System.out.println("--- Q12: Smallest of Four Numbers using Nested Ternary ---");
+        System.out.print("Enter four numbers: ");
+        int n1 = sc.nextInt();
+        int n2 = sc.nextInt();
+        int n3 = sc.nextInt();
+        int n4 = sc.nextInt();
+
+        int smallest = (n1 < n2) ? ((n1 < n3) ? ((n1 < n4) ? n1 : n4) : ((n3 < n4) ? n3 : n4))
+                                : ((n2 < n3) ? ((n2 < n4) ? n2 : n4) : ((n3 < n4) ? n3 : n4));
+
+        System.out.println("The smallest number is: " + smallest);
+        sc.close();
+    }
+}
+
+
+
+// Q13. Character Classification using Ternary Operator
+
+import java.util.Scanner;
+
+public class Lab02_Q13 {
+    public static void main(String[] args) {
+        Scanner sc = new Scanner(System.in);
+        System.out.println("--- Q13: Character Classification using Ternary Operator ---");
+        System.out.print("Enter a character: ");
+        char ch = sc.next().charAt(0);
+
+        String result = (ch >= '0' && ch <= '9') ? "Digit" :
+                        ((ch >= 'a' && ch <= 'z') || (ch >= 'A' && ch <= 'Z')) ?
+                            ((ch == 'a' || ch == 'e' || ch == 'i' || ch == 'o' || ch == 'u' ||
+                              ch == 'A' || ch == 'E' || ch == 'I' || ch == 'O' || ch == 'U') ? "Vowel" : "Consonant")
+                            : "Special Symbol";
+
+        System.out.println("Character '" + ch + "' is classified as: " + result);
+        sc.close();
+    }
+}
+
+
+
+// Q14. Swap Two Integers without Temporary Variable (XOR)
+
+import java.util.Scanner;
+
+public class Lab02_Q14 {
+    public static void main(String[] args) {
+        Scanner sc = new Scanner(System.in);
+        System.out.println("--- Q14: Swap Two Integers without Temporary Variable (XOR) ---");
+        System.out.print("Enter first integer (a): ");
+        int a = sc.nextInt();
+        System.out.print("Enter second integer (b): ");
+        int b = sc.nextInt();
+
+        System.out.println("Before swap: a = " + a + ", b = " + b);
+        a = a ^ b;
+        b = a ^ b;
+        a = a ^ b;
+        System.out.println("After swap: a = " + a + ", b = " + b);
+        sc.close();
+    }
+}
+
+
+
+// Q15. Count Set Bits (1s) in Binary Representation
+
+import java.util.Scanner;
+
+public class Lab02_Q15 {
+    public static void main(String[] args) {
+        Scanner sc = new Scanner(System.in);
+        System.out.println("--- Q15: Count Set Bits (1s) in Binary Representation ---");
+        System.out.print("Enter an integer: ");
+        int n = sc.nextInt();
+        int count = 0;
+        int temp = n;
+
+        while (temp != 0) {
+            count += (temp & 1);
+            temp >>>= 1;
+        }
+        System.out.println("Number of set bits in " + n + " is: " + count);
+        sc.close();
+    }
+}
+
+
+
+// Q16. Fast Multiplication and Division using Shift Operators
+
+import java.util.Scanner;
+
+public class Lab02_Q16 {
+    public static void main(String[] args) {
+        Scanner sc = new Scanner(System.in);
+        System.out.println("--- Q16: Fast Multiplication and Division using Shift Operators ---");
+        System.out.print("Enter an integer: ");
+        int num = sc.nextInt();
+        System.out.print("Enter power of two exponent: ");
+        int k = sc.nextInt();
+
+        int multiplied = num << k;
+        int divided = num >> k;
+
+        System.out.println(num + " * (2^" + k + ") = " + multiplied);
+        System.out.println(num + " / (2^" + k + ") = " + divided);
+        sc.close();
+    }
+}
+
+
+
+// Q17. Cyclically Rotate Bits Left by 2 Positions
+
+import java.util.Scanner;
+
+public class Lab02_Q17 {
+    public static void main(String[] args) {
+        Scanner sc = new Scanner(System.in);
+        System.out.println("--- Q17: Cyclically Rotate Bits Left by 2 Positions ---");
+        System.out.print("Enter an integer: ");
+        int n = sc.nextInt();
+        int rotated = (n << 2) | (n >>> (32 - 2));
+        System.out.println("Original integer: " + n);
+        System.out.println("After left rotation by 2: " + rotated);
+        sc.close();
+    }
+}
+
+
+
+// Q18. First 20 Terms of Fibonacci Sequence
+
+import java.util.Scanner;
+
+public class Lab02_Q18 {
+    public static void main(String[] args) {
+        Scanner sc = new Scanner(System.in);
+        System.out.println("--- Q18: First 20 Terms of Fibonacci Sequence ---");
+        long t1 = 0, t2 = 1;
+        System.out.print("Fibonacci Series: ");
+        for (int i = 1; i <= 20; i++) {
+            System.out.print(t1 + " ");
+            long sum = t1 + t2;
+            t1 = t2;
+            t2 = sum;
+        }
+        System.out.println();
+        sc.close();
+    }
+}
+
+
+
+// Q19. Armstrong Numbers Between 1 and 1000
+
+import java.util.Scanner;
+
+public class Lab02_Q19 {
+    public static void main(String[] args) {
+        Scanner sc = new Scanner(System.in);
+        System.out.println("--- Q19: Armstrong Numbers Between 1 and 1000 ---");
+        System.out.print("Armstrong numbers: ");
+        for (int i = 1; i <= 1000; i++) {
+            int sum = 0, digits = 0;
+            int t = i;
+            while (t > 0) { digits++; t /= 10; }
+            t = i;
+            while (t > 0) {
+                int d = t % 10;
+                sum += Math.pow(d, digits);
+                t /= 10;
+            }
+            if (sum == i) {
+                System.out.print(i + " ");
+            }
+        }
+        System.out.println();
+        sc.close();
+    }
+}
+
+
+
+// Q20. Password Verification using do-while
+
+import java.util.Scanner;
+
+public class Lab02_Q20 {
+    public static void main(String[] args) {
+        Scanner sc = new Scanner(System.in);
+        System.out.println("--- Q20: Password Verification using do-while ---");
+        String correctPass = "COER2026";
+        String enteredPass;
+        do {
+            System.out.print("Enter password: ");
+            enteredPass = sc.next();
+            if (!enteredPass.equals(correctPass)) {
+                System.out.println("Incorrect password! Try again.");
+            }
+        } while (!enteredPass.equals(correctPass));
+        System.out.println("Access Granted!");
+        sc.close();
+    }
+}
+
+
+
+// Q21. Display Factors of a Number using do-while
+
+import java.util.Scanner;
+
+public class Lab02_Q21 {
+    public static void main(String[] args) {
+        Scanner sc = new Scanner(System.in);
+        System.out.println("--- Q21: Display Factors of a Number using do-while ---");
+        System.out.print("Enter a positive integer: ");
+        int n = sc.nextInt();
+        int i = 1;
+        System.out.print("Factors of " + n + ": ");
+        do {
+            if (n % i == 0) {
+                System.out.print(i + " ");
+            }
+            i++;
+        } while (i <= n);
+        System.out.println();
+        sc.close();
+    }
+}
+
+
+
+// Q22. Reverse Digits of an Integer using while
+
+import java.util.Scanner;
+
+public class Lab02_Q22 {
+    public static void main(String[] args) {
+        Scanner sc = new Scanner(System.in);
+        System.out.println("--- Q22: Reverse Digits of an Integer using while ---");
+        System.out.print("Enter an integer: ");
+        int n = sc.nextInt();
+        int rev = 0;
+        int temp = n;
+        while (temp != 0) {
+            rev = rev * 10 + (temp % 10);
+            temp /= 10;
+        }
+        System.out.println("Reversed integer: " + rev);
+        sc.close();
+    }
+}
+
+
+
+// Q23. Palindrome Check using while
+
+import java.util.Scanner;
+
+public class Lab02_Q23 {
+    public static void main(String[] args) {
+        Scanner sc = new Scanner(System.in);
+        System.out.println("--- Q23: Palindrome Check using while ---");
+        System.out.print("Enter an integer: ");
+        int n = sc.nextInt();
+        int original = n, rev = 0;
+        while (n > 0) {
+            rev = rev * 10 + (n % 10);
+            n /= 10;
+        }
+        if (original == rev) {
+            System.out.println(original + " is a palindrome.");
+        } else {
+            System.out.println(original + " is NOT a palindrome.");
+        }
+        sc.close();
+    }
+}
+
+
+
+// Q24. Maximum and Minimum in Array using for-each
+
+import java.util.Scanner;
+
+public class Lab02_Q24 {
+    public static void main(String[] args) {
+        Scanner sc = new Scanner(System.in);
+        System.out.println("--- Q24: Maximum and Minimum in Array using for-each ---");
+        int[] arr = {45, 12, 89, 34, 67, 23, 90, 5};
+        int max = arr[0];
+        int min = arr[0];
+        for (int val : arr) {
+            if (val > max) max = val;
+            if (val < min) min = val;
+        }
+        System.out.println("Maximum value: " + max);
+        System.out.println("Minimum value: " + min);
+        sc.close();
+    }
+}
+
+
+
+// Q25. Average Marks in 2D Array using for-each
+
+import java.util.Scanner;
+
+public class Lab02_Q25 {
+    public static void main(String[] args) {
+        Scanner sc = new Scanner(System.in);
+        System.out.println("--- Q25: Average Marks in 2D Array using for-each ---");
+        double[][] marks = {
+            {75, 80, 85},
+            {90, 85, 88},
+            {60, 70, 65},
+            {80, 82, 88}
+        };
+        double totalSum = 0;
+        int count = 0;
+        for (double[] row : marks) {
+            for (double mark : row) {
+                totalSum += mark;
+                count++;
+            }
+        }
+        double average = totalSum / count;
+        System.out.println("Average Marks: " + average);
+        sc.close();
+    }
+}
+
+
+
+// Q26. Weekday or Weekend Check using switch-case
+
+import java.util.Scanner;
+
+public class Lab02_Q26 {
+    public static void main(String[] args) {
+        Scanner sc = new Scanner(System.in);
+        System.out.println("--- Q26: Weekday or Weekend Check using switch-case ---");
+        System.out.print("Enter day number (1-7): ");
+        int day = sc.nextInt();
+        switch (day) {
+            case 1:
+            case 2:
+            case 3:
+            case 4:
+            case 5:
+                System.out.println("Weekday");
+                break;
+            case 6:
+            case 7:
+                System.out.println("Weekend");
+                break;
+            default:
+                System.out.println("Invalid day number!");
+        }
+        sc.close();
+    }
+}
+
+
+
+// Q27. Grade Qualitative Meaning using switch-case
+
+import java.util.Scanner;
+
+public class Lab02_Q27 {
+    public static void main(String[] args) {
+        Scanner sc = new Scanner(System.in);
+        System.out.println("--- Q27: Grade Qualitative Meaning using switch-case ---");
+        System.out.print("Enter grade (A-F): ");
+        char grade = Character.toUpperCase(sc.next().charAt(0));
+        switch (grade) {
+            case 'A': System.out.println("A -> Excellent"); break;
+            case 'B': System.out.println("B -> Good"); break;
+            case 'C': System.out.println("C -> Average"); break;
+            case 'D': System.out.println("D -> Below Average"); break;
+            case 'E': System.out.println("E -> Pass"); break;
+            case 'F': System.out.println("F -> Fail"); break;
+            default: System.out.println("Invalid grade.");
+        }
+        sc.close();
+    }
+}
+
+
+
+// Q28. Print 1 to 50 Skipping Perfect Squares using continue
+
+import java.util.Scanner;
+
+public class Lab02_Q28 {
+    public static void main(String[] args) {
+        Scanner sc = new Scanner(System.in);
+        System.out.println("--- Q28: Print 1 to 50 Skipping Perfect Squares using continue ---");
+        System.out.print("Numbers: ");
+        for (int i = 1; i <= 50; i++) {
+            int root = (int) Math.sqrt(i);
+            if (root * root == i) {
+                continue;
+            }
+            System.out.print(i + " ");
+        }
+        System.out.println();
+        sc.close();
+    }
+}
+
+
+
+// Q29. Random Integers until Divisible by 7 and 13 using break
+
+import java.util.Scanner;
+import java.util.Random;
+
+public class Lab02_Q29 {
+    public static void main(String[] args) {
+        Scanner sc = new Scanner(System.in);
+        System.out.println("--- Q29: Random Integers until Divisible by 7 and 13 using break ---");
+        Random rand = new Random();
+        while (true) {
+            int num = rand.nextInt(100) + 1;
+            System.out.println("Generated: " + num);
+            if (num % 7 == 0 && num % 13 == 0) {
+                System.out.println("Found number: " + num);
+                break;
+            }
+        }
+        sc.close();
+    }
+}
+
+
+
+// Q30. Mixed Advanced Program
+
+import java.util.Scanner;
+
+public class Lab02_Q30 {
+    public static void main(String[] args) {
+        Scanner sc = new Scanner(System.in);
+        System.out.println("--- Q30: Mixed Advanced Program ---");
+        System.out.print("Enter a number: ");
+        int n = sc.nextInt();
+
+        boolean isPowerOf4 = (n > 0) && ((n & (n - 1)) == 0) && ((n & 0x55555555) != 0);
+        System.out.println("Is power of 4: " + isPowerOf4);
+
+        int toggled = n ^ (1 << 2);
+        System.out.println("Toggled 3rd bit: " + toggled);
+
+        for (int i = 1; i <= 10; i++) {
+            int prod = n * i;
+            if (prod % 48 == 0) {
+                System.out.println("Reached multiple of 48. Breaking.");
+                break;
+            }
+            if (prod % 6 == 0) {
+                continue;
+            }
+            System.out.println(n + " * " + i + " = " + prod);
+        }
+        sc.close();
+    }
+}

@@ -1,0 +1,769 @@
+/* ==========================================================
+   COER UNIVERSITY - BCA III SEMESTER (2026-2027)
+   BCA201P: FOUNDATIONS OF JAVA DEVELOPMENT - LAB SHEET 01
+   All 30 Separate Standalone Programs (Clean Spacing Version)
+   ========================================================== */
+
+
+
+// Q1. Write a Java program to display your name, age, and college name using variables of appropriate data types.
+
+import java.util.Scanner;
+
+public class Lab01_Q01 {
+    public static void main(String[] args) {
+        System.out.println("--- Q1: Student Details ---");
+        String name = "Salik";
+        int age = 20;
+        String collegeName = "COER University";
+        System.out.println("Name: " + name);
+        System.out.println("Age: " + age);
+        System.out.println("College Name: " + collegeName);
+    }
+}
+
+
+
+// Q2. Input two integers and print the result of all arithmetic operations (addition, subtraction, multiplication, division, and modulus).
+
+import java.util.Scanner;
+
+public class Lab01_Q02 {
+    public static void main(String[] args) {
+        Scanner sc = new Scanner(System.in);
+        System.out.println("--- Q2: Arithmetic Operations ---");
+        System.out.print("Enter first integer: ");
+        int a = sc.nextInt();
+        System.out.print("Enter second integer: ");
+        int b = sc.nextInt();
+        System.out.println("Addition: " + (a + b));
+        System.out.println("Subtraction: " + (a - b));
+        System.out.println("Multiplication: " + (a * b));
+        if (b != 0) {
+            System.out.println("Division: " + ((double) a / b));
+            System.out.println("Modulus: " + (a % b));
+        } else {
+            System.out.println("Division & Modulus by zero is not allowed.");
+        }
+        sc.close();
+    }
+}
+
+
+
+// Q3. Write a Java program to check whether a given number is even or odd using the modulus operator and if-else.
+
+import java.util.Scanner;
+
+public class Lab01_Q03 {
+    public static void main(String[] args) {
+        Scanner sc = new Scanner(System.in);
+        System.out.println("--- Q3: Even or Odd Check ---");
+        System.out.print("Enter an integer: ");
+        int num = sc.nextInt();
+        if (num % 2 == 0) {
+            System.out.println(num + " is Even.");
+        } else {
+            System.out.println(num + " is Odd.");
+        }
+        sc.close();
+    }
+}
+
+
+
+// Q4. Write a program to demonstrate the use of relational operators by comparing two numbers.
+
+import java.util.Scanner;
+
+public class Lab01_Q04 {
+    public static void main(String[] args) {
+        Scanner sc = new Scanner(System.in);
+        System.out.println("--- Q4: Relational Operators Demo ---");
+        System.out.print("Enter first number: ");
+        int x = sc.nextInt();
+        System.out.print("Enter second number: ");
+        int y = sc.nextInt();
+        System.out.println(x + " == " + y + " : " + (x == y));
+        System.out.println(x + " != " + y + " : " + (x != y));
+        System.out.println(x + " > " + y + " : " + (x > y));
+        System.out.println(x + " < " + y + " : " + (x < y));
+        System.out.println(x + " >= " + y + " : " + (x >= y));
+        System.out.println(x + " <= " + y + " : " + (x <= y));
+        sc.close();
+    }
+}
+
+
+
+// Q5. Accept a floating-point number and convert it explicitly to an integer. Print both the original and the converted values.
+
+import java.util.Scanner;
+
+public class Lab01_Q05 {
+    public static void main(String[] args) {
+        Scanner sc = new Scanner(System.in);
+        System.out.println("--- Q5: Float to Integer Type Casting ---");
+        System.out.print("Enter a floating-point number: ");
+        float fNum = sc.nextFloat();
+        int iNum = (int) fNum;
+        System.out.println("Original float value: " + fNum);
+        System.out.println("Converted integer value: " + iNum);
+        sc.close();
+    }
+}
+
+
+
+// Q6. Write a program to accept a character and print its ASCII value.
+
+import java.util.Scanner;
+
+public class Lab01_Q06 {
+    public static void main(String[] args) {
+        Scanner sc = new Scanner(System.in);
+        System.out.println("--- Q6: Character ASCII Value ---");
+        System.out.print("Enter a character: ");
+        char ch = sc.next().charAt(0);
+        int ascii = (int) ch;
+        System.out.println("Character: " + ch + " | ASCII Value: " + ascii);
+        sc.close();
+    }
+}
+
+
+
+// Q7. Input a number and check if it is divisible by both 3 and 5 using logical operators.
+
+import java.util.Scanner;
+
+public class Lab01_Q07 {
+    public static void main(String[] args) {
+        Scanner sc = new Scanner(System.in);
+        System.out.println("--- Q7: Divisible by 3 and 5 ---");
+        System.out.print("Enter an integer: ");
+        int n = sc.nextInt();
+        if (n % 3 == 0 && n % 5 == 0) {
+            System.out.println(n + " is divisible by both 3 and 5.");
+        } else {
+            System.out.println(n + " is NOT divisible by both 3 and 5.");
+        }
+        sc.close();
+    }
+}
+
+
+
+// Q8. Input a character and check whether it is a vowel or a consonant using if-else.
+
+import java.util.Scanner;
+
+public class Lab01_Q08 {
+    public static void main(String[] args) {
+        Scanner sc = new Scanner(System.in);
+        System.out.println("--- Q8: Vowel or Consonant Check ---");
+        System.out.print("Enter an alphabet character: ");
+        char c = sc.next().toLowerCase().charAt(0);
+        if (!Character.isLetter(c)) {
+            System.out.println("Invalid input. Please enter an alphabet letter.");
+        } else if (c == 'a' || c == 'e' || c == 'i' || c == 'o' || c == 'u') {
+            System.out.println(c + " is a Vowel.");
+        } else {
+            System.out.println(c + " is a Consonant.");
+        }
+        sc.close();
+    }
+}
+
+
+
+// Q9. Input marks of three subjects, calculate total and percentage, and print pass/fail using if-else (passing criteria: >=40% in all subjects).
+
+import java.util.Scanner;
+
+public class Lab01_Q09 {
+    public static void main(String[] args) {
+        Scanner sc = new Scanner(System.in);
+        System.out.println("--- Q9: Marks Calculation & Pass/Fail ---");
+        System.out.print("Enter marks for Subject 1 (out of 100): ");
+        double m1 = sc.nextDouble();
+        System.out.print("Enter marks for Subject 2 (out of 100): ");
+        double m2 = sc.nextDouble();
+        System.out.print("Enter marks for Subject 3 (out of 100): ");
+        double m3 = sc.nextDouble();
+
+        double total = m1 + m2 + m3;
+        double percentage = (total / 300.0) * 100;
+        System.out.println("Total Marks: " + total + " / 300");
+        System.out.println("Percentage: " + percentage + "%");
+
+        if (m1 >= 40 && m2 >= 40 && m3 >= 40 && percentage >= 40) {
+            System.out.println("Result: PASS");
+        } else {
+            System.out.println("Result: FAIL");
+        }
+        sc.close();
+    }
+}
+
+
+
+// Q10. Write a program to find the greatest of two numbers using if-else.
+
+import java.util.Scanner;
+
+public class Lab01_Q10 {
+    public static void main(String[] args) {
+        Scanner sc = new Scanner(System.in);
+        System.out.println("--- Q10: Greatest of Two Numbers ---");
+        System.out.print("Enter first number: ");
+        double a = sc.nextDouble();
+        System.out.print("Enter second number: ");
+        double b = sc.nextDouble();
+        if (a > b) {
+            System.out.println(a + " is greater than " + b);
+        } else if (b > a) {
+            System.out.println(b + " is greater than " + a);
+        } else {
+            System.out.println("Both numbers are equal.");
+        }
+        sc.close();
+    }
+}
+
+
+
+// Q11. Input three numbers and print the largest using nested if-else.
+
+import java.util.Scanner;
+
+public class Lab01_Q11 {
+    public static void main(String[] args) {
+        Scanner sc = new Scanner(System.in);
+        System.out.println("--- Q11: Largest of Three Numbers (Nested If-Else) ---");
+        System.out.print("Enter number 1: ");
+        double n1 = sc.nextDouble();
+        System.out.print("Enter number 2: ");
+        double n2 = sc.nextDouble();
+        System.out.print("Enter number 3: ");
+        double n3 = sc.nextDouble();
+
+        if (n1 >= n2) {
+            if (n1 >= n3) {
+                System.out.println(n1 + " is the largest.");
+            } else {
+                System.out.println(n3 + " is the largest.");
+            }
+        } else {
+            if (n2 >= n3) {
+                System.out.println(n2 + " is the largest.");
+            } else {
+                System.out.println(n3 + " is the largest.");
+            }
+        }
+        sc.close();
+    }
+}
+
+
+
+// Q12. Accept a year and check whether it is a leap year using if-else.
+
+import java.util.Scanner;
+
+public class Lab01_Q12 {
+    public static void main(String[] args) {
+        Scanner sc = new Scanner(System.in);
+        System.out.println("--- Q12: Leap Year Check ---");
+        System.out.print("Enter a year: ");
+        int year = sc.nextInt();
+        boolean isLeap = false;
+        if (year % 4 == 0) {
+            if (year % 100 == 0) {
+                if (year % 400 == 0) {
+                    isLeap = true;
+                }
+            } else {
+                isLeap = true;
+            }
+        }
+        if (isLeap) {
+            System.out.println(year + " is a Leap Year.");
+        } else {
+            System.out.println(year + " is NOT a Leap Year.");
+        }
+        sc.close();
+    }
+}
+
+
+
+// Q13. Accept a number and check whether it is positive, negative, or zero using if-else.
+
+import java.util.Scanner;
+
+public class Lab01_Q13 {
+    public static void main(String[] args) {
+        Scanner sc = new Scanner(System.in);
+        System.out.println("--- Q13: Positive, Negative or Zero ---");
+        System.out.print("Enter a number: ");
+        double val = sc.nextDouble();
+        if (val > 0) {
+            System.out.println(val + " is Positive.");
+        } else if (val < 0) {
+            System.out.println(val + " is Negative.");
+        } else {
+            System.out.println("The number is Zero.");
+        }
+        sc.close();
+    }
+}
+
+
+
+// Q14. Accept a character and check if it is a digit, uppercase letter, lowercase letter, or a special character using character classification and if-else.
+
+import java.util.Scanner;
+
+public class Lab01_Q14 {
+    public static void main(String[] args) {
+        Scanner sc = new Scanner(System.in);
+        System.out.println("--- Q14: Character Classification ---");
+        System.out.print("Enter a character: ");
+        char ch = sc.next().charAt(0);
+        if (Character.isDigit(ch)) {
+            System.out.println(ch + " is a Digit.");
+        } else if (Character.isUpperCase(ch)) {
+            System.out.println(ch + " is an Uppercase Letter.");
+        } else if (Character.isLowerCase(ch)) {
+            System.out.println(ch + " is a Lowercase Letter.");
+        } else {
+            System.out.println(ch + " is a Special Character.");
+        }
+        sc.close();
+    }
+}
+
+
+
+// Q15. Accept a 3-digit number and check whether it is an Armstrong number using arithmetic operators and if-else.
+
+import java.util.Scanner;
+
+public class Lab01_Q15 {
+    public static void main(String[] args) {
+        Scanner sc = new Scanner(System.in);
+        System.out.println("--- Q15: Armstrong Number Check (3-digit) ---");
+        System.out.print("Enter a 3-digit number: ");
+        int num = sc.nextInt();
+        if (num < 100 || num > 999) {
+            System.out.println("Please enter a valid 3-digit number.");
+        } else {
+            int original = num;
+            int sum = 0;
+            while (num > 0) {
+                int digit = num % 10;
+                sum += (digit * digit * digit);
+                num /= 10;
+            }
+            if (sum == original) {
+                System.out.println(original + " is an Armstrong number.");
+            } else {
+                System.out.println(original + " is NOT an Armstrong number.");
+            }
+        }
+        sc.close();
+    }
+}
+
+
+
+// Q16. Input salary and calculate tax based on income slabs using if-else.
+
+import java.util.Scanner;
+
+public class Lab01_Q16 {
+    public static void main(String[] args) {
+        Scanner sc = new Scanner(System.in);
+        System.out.println("--- Q16: Income Tax Calculation ---");
+        System.out.print("Enter annual salary: ");
+        double salary = sc.nextDouble();
+        double tax = 0;
+
+        if (salary <= 250000) {
+            tax = 0;
+        } else if (salary <= 500000) {
+            tax = (salary - 250000) * 0.05;
+        } else if (salary <= 1000000) {
+            tax = (250000 * 0.05) + (salary - 500000) * 0.20;
+        } else {
+            tax = (250000 * 0.05) + (500000 * 0.20) + (salary - 1000000) * 0.30;
+        }
+        System.out.println("Calculated Income Tax: ₹" + tax);
+        sc.close();
+    }
+}
+
+
+
+// Q17. Accept an integer and check whether it is a palindrome using arithmetic operations and type casting.
+
+import java.util.Scanner;
+
+public class Lab01_Q17 {
+    public static void main(String[] args) {
+        Scanner sc = new Scanner(System.in);
+        System.out.println("--- Q17: Palindrome Integer Check ---");
+        System.out.print("Enter an integer: ");
+        int n = sc.nextInt();
+        int original = n;
+        int reversed = 0;
+        while (n > 0) {
+            int digit = n % 10;
+            reversed = reversed * 10 + digit;
+            n /= 10;
+        }
+        if (original == reversed) {
+            System.out.println(original + " is a Palindrome number.");
+        } else {
+            System.out.println(original + " is NOT a Palindrome number.");
+        }
+        sc.close();
+    }
+}
+
+
+
+// Q19. Accept a character and use if-else to identify whether it's a valid operator (+, -, *, /) and perform corresponding operation.
+
+import java.util.Scanner;
+
+public class Lab01_Q19 {
+    public static void main(String[] args) {
+        Scanner sc = new Scanner(System.in);
+        System.out.println("--- Q19: Operator Check & Calculation ---");
+        System.out.print("Enter first number: ");
+        double a = sc.nextDouble();
+        System.out.print("Enter second number: ");
+        double b = sc.nextDouble();
+        System.out.print("Enter an operator (+, -, *, /): ");
+        char op = sc.next().charAt(0);
+
+        if (op == '+') {
+            System.out.println("Result: " + (a + b));
+        } else if (op == '-') {
+            System.out.println("Result: " + (a - b));
+        } else if (op == '*') {
+            System.out.println("Result: " + (a * b));
+        } else if (op == '/') {
+            if (b != 0) {
+                System.out.println("Result: " + (a / b));
+            } else {
+                System.out.println("Error: Division by zero!");
+            }
+        } else {
+            System.out.println("Invalid operator!");
+        }
+        sc.close();
+    }
+}
+
+
+
+// Q20. Accept age and gender and determine eligibility for marriage (male >= 21, female >= 18).
+
+import java.util.Scanner;
+
+public class Lab01_Q20 {
+    public static void main(String[] args) {
+        Scanner sc = new Scanner(System.in);
+        System.out.println("--- Q20: Marriage Eligibility Check ---");
+        System.out.print("Enter gender (M for Male, F for Female): ");
+        char gender = sc.next().toUpperCase().charAt(0);
+        System.out.print("Enter age: ");
+        int age = sc.nextInt();
+
+        if (gender == 'M') {
+            if (age >= 21) {
+                System.out.println("Eligible for marriage.");
+            } else {
+                System.out.println("NOT eligible for marriage (Male age must be >= 21).");
+            }
+        } else if (gender == 'F') {
+            if (age >= 18) {
+                System.out.println("Eligible for marriage.");
+            } else {
+                System.out.println("NOT eligible for marriage (Female age must be >= 18).");
+            }
+        } else {
+            System.out.println("Invalid gender input.");
+        }
+        sc.close();
+    }
+}
+
+
+
+// Q21. Accept three angles and check whether they can form a valid triangle (sum of angles = 180 degrees).
+
+import java.util.Scanner;
+
+public class Lab01_Q21 {
+    public static void main(String[] args) {
+        Scanner sc = new Scanner(System.in);
+        System.out.println("--- Q21: Valid Triangle Check ---");
+        System.out.print("Enter angle 1: ");
+        double a1 = sc.nextDouble();
+        System.out.print("Enter angle 2: ");
+        double a2 = sc.nextDouble();
+        System.out.print("Enter angle 3: ");
+        double a3 = sc.nextDouble();
+
+        if (a1 > 0 && a2 > 0 && a3 > 0 && (a1 + a2 + a3 == 180)) {
+            System.out.println("The angles form a valid triangle.");
+        } else {
+            System.out.println("The angles DO NOT form a valid triangle.");
+        }
+        sc.close();
+    }
+}
+
+
+
+// Q22. Input length and breadth of a rectangle, and determine whether it is a square using if-else.
+
+import java.util.Scanner;
+
+public class Lab01_Q22 {
+    public static void main(String[] args) {
+        Scanner sc = new Scanner(System.in);
+        System.out.println("--- Q22: Rectangle or Square Check ---");
+        System.out.print("Enter length: ");
+        double length = sc.nextDouble();
+        System.out.print("Enter breadth: ");
+        double breadth = sc.nextDouble();
+
+        if (length == breadth && length > 0) {
+            System.out.println("It is a Square.");
+        } else if (length > 0 && breadth > 0) {
+            System.out.println("It is a Rectangle.");
+        } else {
+            System.out.println("Invalid dimensions.");
+        }
+        sc.close();
+    }
+}
+
+
+
+// Q23. Input temperature in Celsius and convert it to Fahrenheit.
+
+import java.util.Scanner;
+
+public class Lab01_Q23 {
+    public static void main(String[] args) {
+        Scanner sc = new Scanner(System.in);
+        System.out.println("--- Q23: Celsius to Fahrenheit ---");
+        System.out.print("Enter temperature in Celsius: ");
+        double celsius = sc.nextDouble();
+        double fahrenheit = (celsius * 9.0 / 5.0) + 32;
+        System.out.println(celsius + "°C is equal to " + fahrenheit + "°F");
+        sc.close();
+    }
+}
+
+
+
+// Q24. Accept a number and check whether it is a perfect number.
+
+import java.util.Scanner;
+
+public class Lab01_Q24 {
+    public static void main(String[] args) {
+        Scanner sc = new Scanner(System.in);
+        System.out.println("--- Q24: Perfect Number Check ---");
+        System.out.print("Enter a positive integer: ");
+        int n = sc.nextInt();
+        if (n <= 0) {
+            System.out.println("Please enter a positive integer.");
+        } else {
+            int sum = 0;
+            for (int i = 1; i <= n / 2; i++) {
+                if (n % i == 0) {
+                    sum += i;
+                }
+            }
+            if (sum == n) {
+                System.out.println(n + " is a Perfect Number.");
+            } else {
+                System.out.println(n + " is NOT a Perfect Number.");
+            }
+        }
+        sc.close();
+    }
+}
+
+
+
+// Q25. Accept two integers and a logical operator as a character. Use if-else to perform logical operation.
+
+import java.util.Scanner;
+
+public class Lab01_Q25 {
+    public static void main(String[] args) {
+        Scanner sc = new Scanner(System.in);
+        System.out.println("--- Q25: Logical Operator Simulation ---");
+        System.out.print("Enter first integer (0 for false, non-zero for true): ");
+        int i1 = sc.nextInt();
+        System.out.print("Enter second integer (0 for false, non-zero for true): ");
+        int i2 = sc.nextInt();
+        boolean b1 = (i1 != 0);
+        boolean b2 = (i2 != 0);
+        System.out.print("Enter logical operator symbol (& for AND, | for OR): ");
+        char logOp = sc.next().charAt(0);
+
+        if (logOp == '&') {
+            System.out.println("Result: " + (b1 && b2));
+        } else if (logOp == '|') {
+            System.out.println("Result: " + (b1 || b2));
+        } else {
+            System.out.println("Invalid logical operator.");
+        }
+        sc.close();
+    }
+}
+
+
+
+// Q26. Input a five-digit number and check whether the first and last digits are the same.
+
+import java.util.Scanner;
+
+public class Lab01_Q26 {
+    public static void main(String[] args) {
+        Scanner sc = new Scanner(System.in);
+        System.out.println("--- Q26: 5-Digit First & Last Digit Check ---");
+        System.out.print("Enter a 5-digit number: ");
+        int num = sc.nextInt();
+        if (num < 10000 || num > 99999) {
+            System.out.println("Please enter a valid 5-digit number.");
+        } else {
+            int lastDigit = num % 10;
+            int firstDigit = num / 10000;
+            if (firstDigit == lastDigit) {
+                System.out.println("The first and last digits are the SAME.");
+            } else {
+                System.out.println("The first and last digits are DIFFERENT.");
+            }
+        }
+        sc.close();
+    }
+}
+
+
+
+// Q27. Input cost price and selling price. Determine profit or loss.
+
+import java.util.Scanner;
+
+public class Lab01_Q27 {
+    public static void main(String[] args) {
+        Scanner sc = new Scanner(System.in);
+        System.out.println("--- Q27: Profit or Loss Calculation ---");
+        System.out.print("Enter Cost Price (CP): ");
+        double cp = sc.nextDouble();
+        System.out.print("Enter Selling Price (SP): ");
+        double sp = sc.nextDouble();
+
+        if (sp > cp) {
+            System.out.println("PROFIT of ₹" + (sp - cp));
+        } else if (cp > sp) {
+            System.out.println("LOSS of ₹" + (cp - sp));
+        } else {
+            System.out.println("No Profit, No Loss.");
+        }
+        sc.close();
+    }
+}
+
+
+
+// Q28. Accept a number and display the number of digits.
+
+import java.util.Scanner;
+
+public class Lab01_Q28 {
+    public static void main(String[] args) {
+        Scanner sc = new Scanner(System.in);
+        System.out.println("--- Q28: Count Number of Digits ---");
+        System.out.print("Enter an integer: ");
+        int n = sc.nextInt();
+        int temp = Math.abs(n);
+        int count = (temp == 0) ? 1 : 0;
+        while (temp > 0) {
+            count++;
+            temp /= 10;
+        }
+        System.out.println("Number of digits in " + n + " is: " + count);
+        sc.close();
+    }
+}
+
+
+
+// Q29. Input height of a person and classify as short, average, or tall.
+
+import java.util.Scanner;
+
+public class Lab01_Q29 {
+    public static void main(String[] args) {
+        Scanner sc = new Scanner(System.in);
+        System.out.println("--- Q29: Height Classification ---");
+        System.out.print("Enter height in cm: ");
+        double height = sc.nextDouble();
+        if (height < 150) {
+            System.out.println("Classification: Short (< 150 cm)");
+        } else if (height <= 170) {
+            System.out.println("Classification: Average (150 - 170 cm)");
+        } else {
+            System.out.println("Classification: Tall (> 170 cm)");
+        }
+        sc.close();
+    }
+}
+
+
+
+// Q30. Simulate a simple calculator using if-else.
+
+import java.util.Scanner;
+
+public class Lab01_Q30 {
+    public static void main(String[] args) {
+        Scanner sc = new Scanner(System.in);
+        System.out.println("--- Q30: Simple Calculator ---");
+        System.out.print("Enter first number: ");
+        double num1 = sc.nextDouble();
+        System.out.print("Enter second number: ");
+        double num2 = sc.nextDouble();
+        System.out.print("Enter operator (+, -, *, /): ");
+        char op = sc.next().charAt(0);
+
+        if (op == '+') {
+            System.out.println("Result: " + (num1 + num2));
+        } else if (op == '-') {
+            System.out.println("Result: " + (num1 - num2));
+        } else if (op == '*') {
+            System.out.println("Result: " + (num1 * num2));
+        } else if (op == '/') {
+            if (num2 != 0) {
+                System.out.println("Result: " + (num1 / num2));
+            } else {
+                System.out.println("Error: Division by zero.");
+            }
+        } else {
+            System.out.println("Invalid operator!");
+        }
+        sc.close();
+    }
+}

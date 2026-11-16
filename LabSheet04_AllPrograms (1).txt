@@ -1,0 +1,947 @@
+/* ==========================================================
+   COER UNIVERSITY - BCA III SEMESTER (2026-2027)
+   BCA201P: FOUNDATIONS OF JAVA DEVELOPMENT - LAB SHEET 04
+   All 30 Separate Standalone Programs (Clean Spacing Version)
+   ========================================================== */
+
+
+
+// Q1. Class Student with instance fields name, age and class variable count
+
+import java.util.Scanner;
+
+class Student {
+    String name;
+    int age;
+    static int count = 0;
+
+    public Student(String name, int age) {
+        this.name = name;
+        this.age = age;
+        count++;
+    }
+
+    public void display() {
+        String localMsg = "Student Details -> Name: " + name + ", Age: " + age + ", Total Students: " + count;
+        System.out.println(localMsg);
+    }
+}
+
+public class Lab04_Q01 {
+    public static void main(String[] args) {
+        System.out.println("--- Q1: Student Class Demo ---");
+        Student s1 = new Student("Aarav", 20);
+        s1.display();
+        Student s2 = new Student("Priya", 19);
+        s2.display();
+    }
+}
+
+
+
+// Q2. Class Rectangle with length, breadth, and class variable shapeName
+
+import java.util.Scanner;
+
+class Rectangle {
+    double length;
+    double breadth;
+    static String shapeName = "Rectangle";
+
+    public Rectangle(double l, double b) {
+        this.length = l;
+        this.breadth = b;
+    }
+
+    public void calculateAndDisplay() {
+        double area = length * breadth;
+        System.out.println("Shape: " + shapeName + " | Length: " + length + " | Breadth: " + breadth + " | Area: " + area);
+    }
+}
+
+public class Lab04_Q02 {
+    public static void main(String[] args) {
+        System.out.println("--- Q2: Rectangle Class Demo ---");
+        Rectangle rect = new Rectangle(12.5, 5.0);
+        rect.calculateAndDisplay();
+    }
+}
+
+
+
+// Q3. Class Circle with radius and class variable PI=3.14
+
+import java.util.Scanner;
+
+class Circle {
+    double radius;
+    static final double PI = 3.14;
+
+    public Circle(double r) {
+        this.radius = r;
+    }
+
+    public void compute() {
+        double area = PI * radius * radius;
+        double circumference = 2 * PI * radius;
+        System.out.println("Radius: " + radius + " | Area: " + area + " | Circumference: " + circumference);
+    }
+}
+
+public class Lab04_Q03 {
+    public static void main(String[] args) {
+        System.out.println("--- Q3: Circle Class Demo ---");
+        Circle c = new Circle(7.0);
+        c.compute();
+    }
+}
+
+
+
+// Q4. Class Employee with empId, salary, and class variable companyName
+
+import java.util.Scanner;
+
+class EmployeeQ4 {
+    int empId;
+    double salary;
+    static String companyName = "COER Tech Solutions";
+
+    public EmployeeQ4(int id, double sal) {
+        this.empId = id;
+        this.salary = sal;
+    }
+
+    public void display() {
+        String info = "Company: " + companyName + " | Emp ID: " + empId + " | Salary: ₹" + salary;
+        System.out.println(info);
+    }
+}
+
+public class Lab04_Q04 {
+    public static void main(String[] args) {
+        System.out.println("--- Q4: Employee Class Demo ---");
+        EmployeeQ4 emp = new EmployeeQ4(101, 45000.0);
+        emp.display();
+    }
+}
+
+
+
+// Q5. Class Book with title, author, price, and class variable publisher
+
+import java.util.Scanner;
+
+class Book {
+    String title;
+    String author;
+    double price;
+    static String publisher = "COER Academic Press";
+
+    public Book(String title, String author, double price) {
+        this.title = title;
+        this.author = author;
+        this.price = price;
+    }
+
+    public void display() {
+        System.out.println("Publisher: " + publisher + " | Title: " + title + " | Author: " + author + " | Price: ₹" + price);
+    }
+}
+
+public class Lab04_Q05 {
+    public static void main(String[] args) {
+        System.out.println("--- Q5: Book Class Demo ---");
+        Book book = new Book("Foundation of Java", "Dr. Sharma", 450.0);
+        book.display();
+    }
+}
+
+
+
+// Q6. Class Car with brand, mileage, and class variable wheels=4
+
+import java.util.Scanner;
+
+class Car {
+    String brand;
+    double mileage;
+    static int wheels = 4;
+
+    public Car(String brand, double mileage) {
+        this.brand = brand;
+        this.mileage = mileage;
+    }
+
+    public void display() {
+        System.out.println("Brand: " + brand + " | Wheels: " + wheels + " | Mileage: " + mileage + " kmpl");
+    }
+}
+
+public class Lab04_Q06 {
+    public static void main(String[] args) {
+        System.out.println("--- Q6: Car Class Demo ---");
+        Car car = new Car("Tata Nexon", 18.5);
+        car.display();
+    }
+}
+
+
+
+// Q7. Class BankAccount with accountNumber, balance, and class variable bankName
+
+import java.util.Scanner;
+
+class BankAccountQ7 {
+    String accountNumber;
+    double balance;
+    static String bankName = "State Bank of India";
+
+    public BankAccountQ7(String accNo, double bal) {
+        this.accountNumber = accNo;
+        this.balance = bal;
+    }
+
+    public void deposit(double amount) {
+        double updatedBalance = balance + amount;
+        balance = updatedBalance;
+        System.out.println("Bank: " + bankName + " | Acc No: " + accountNumber + " | Deposited: ₹" + amount + " | New Balance: ₹" + balance);
+    }
+}
+
+public class Lab04_Q07 {
+    public static void main(String[] args) {
+        System.out.println("--- Q7: BankAccount Deposit Demo ---");
+        BankAccountQ7 acc = new BankAccountQ7("ACC987654", 5000.0);
+        acc.deposit(2500.0);
+    }
+}
+
+
+
+// Q8. Class Pen with color, type, and class variable manufacturer
+
+import java.util.Scanner;
+
+class Pen {
+    String color;
+    String type;
+    static String manufacturer = "Reynolds";
+
+    public Pen(String color, String type) {
+        this.color = color;
+        this.type = type;
+    }
+
+    public void display() {
+        System.out.println("Manufacturer: " + manufacturer + " | Color: " + color + " | Type: " + type);
+    }
+}
+
+public class Lab04_Q08 {
+    public static void main(String[] args) {
+        System.out.println("--- Q8: Pen Class Demo ---");
+        Pen pen = new Pen("Blue", "Ballpoint");
+        pen.display();
+    }
+}
+
+
+
+// Q9. Class Laptop with brand, RAM, and class variable os = "Windows"
+
+import java.util.Scanner;
+
+class Laptop {
+    String brand;
+    String ram;
+    static String os = "Windows 11";
+
+    public Laptop(String brand, String ram) {
+        this.brand = brand;
+        this.ram = ram;
+    }
+
+    public void display() {
+        System.out.println("Brand: " + brand + " | RAM: " + ram + " | OS: " + os);
+    }
+}
+
+public class Lab04_Q09 {
+    public static void main(String[] args) {
+        System.out.println("--- Q9: Laptop Class Demo ---");
+        Laptop lap = new Laptop("Dell Inspiron", "16GB");
+        lap.display();
+    }
+}
+
+
+
+// Q10. Class Movie with name, genre, rating, and class variable industry
+
+import java.util.Scanner;
+
+class Movie {
+    String name;
+    String genre;
+    double rating;
+    static String industry = "Bollywood";
+
+    public Movie(String name, String genre, double rating) {
+        this.name = name;
+        this.genre = genre;
+        this.rating = rating;
+    }
+
+    public void display() {
+        System.out.println("Industry: " + industry + " | Movie: " + name + " | Genre: " + genre + " | Rating: " + rating + "/10");
+    }
+}
+
+public class Lab04_Q10 {
+    public static void main(String[] args) {
+        System.out.println("--- Q10: Movie Class Demo ---");
+        Movie mov = new Movie("3 Idiots", "Comedy/Drama", 8.4);
+        mov.display();
+    }
+}
+
+
+
+// Q11. Class Calculator with operations and class variable operationsCount
+
+import java.util.Scanner;
+
+class Calculator {
+    static int operationsCount = 0;
+
+    public double add(double a, double b) {
+        operationsCount++;
+        double res = a + b;
+        return res;
+    }
+
+    public double subtract(double a, double b) {
+        operationsCount++;
+        double res = a - b;
+        return res;
+    }
+
+    public double multiply(double a, double b) {
+        operationsCount++;
+        double res = a * b;
+        return res;
+    }
+
+    public double divide(double a, double b) {
+        operationsCount++;
+        return a / b;
+    }
+}
+
+public class Lab04_Q11 {
+    public static void main(String[] args) {
+        System.out.println("--- Q11: Calculator with Static Counter ---");
+        Calculator calc = new Calculator();
+        System.out.println("Sum: " + calc.add(10, 5));
+        System.out.println("Product: " + calc.multiply(4, 3));
+        System.out.println("Total operations performed: " + Calculator.operationsCount);
+    }
+}
+
+
+
+// Q12. Class StudentMarks with marks1, marks2, marks3 and class variable universityName
+
+import java.util.Scanner;
+
+class StudentMarks {
+    double marks1, marks2, marks3;
+    static String universityName = "COER University";
+
+    public StudentMarks(double m1, double m2, double m3) {
+        this.marks1 = m1;
+        this.marks2 = m2;
+        this.marks3 = m3;
+    }
+
+    public void calculateAverage() {
+        double avg = (marks1 + marks2 + marks3) / 3.0;
+        System.out.println("University: " + universityName + " | Average Marks: " + avg);
+    }
+}
+
+public class Lab04_Q12 {
+    public static void main(String[] args) {
+        System.out.println("--- Q12: StudentMarks Average Demo ---");
+        StudentMarks sm = new StudentMarks(85.5, 90.0, 78.5);
+        sm.calculateAverage();
+    }
+}
+
+
+
+// Q13. Class Temperature with celsius and class variable scale = "Celsius"
+
+import java.util.Scanner;
+
+class Temperature {
+    double celsius;
+    static String scale = "Celsius";
+
+    public Temperature(double c) {
+        this.celsius = c;
+    }
+
+    public void convert() {
+        double fahrenheit = (celsius * 9.0 / 5.0) + 32;
+        double kelvin = celsius + 273.15;
+        System.out.println("Temp in " + scale + ": " + celsius + " | Fahrenheit: " + fahrenheit + "°F | Kelvin: " + kelvin + "K");
+    }
+}
+
+public class Lab04_Q13 {
+    public static void main(String[] args) {
+        System.out.println("--- Q13: Temperature Conversion ---");
+        Temperature temp = new Temperature(25.0);
+        temp.convert();
+    }
+}
+
+
+
+// Q14. Class Person with name, age and class variable country for voting eligibility
+
+import java.util.Scanner;
+
+class Person {
+    String name;
+    int age;
+    static String country = "India";
+
+    public Person(String name, int age) {
+        this.name = name;
+        this.age = age;
+    }
+
+    public void checkVotingEligibility() {
+        boolean eligible = (age >= 18);
+        System.out.println("Country: " + country + " | Name: " + name + " | Age: " + age + " | Eligible to Vote: " + eligible);
+    }
+}
+
+public class Lab04_Q14 {
+    public static void main(String[] args) {
+        System.out.println("--- Q14: Person Voting Eligibility ---");
+        Person p = new Person("Rohit", 20);
+        p.checkVotingEligibility();
+    }
+}
+
+
+
+// Q15. Class SimpleInterest with principal, rate, time, and class variable bank
+
+import java.util.Scanner;
+
+class SimpleInterest {
+    double principal, rate, time;
+    static String bank = "Punjab National Bank";
+
+    public SimpleInterest(double p, double r, double t) {
+        this.principal = p;
+        this.rate = r;
+        this.time = t;
+    }
+
+    public void calculate() {
+        double si = (principal * rate * time) / 100.0;
+        System.out.println("Bank: " + bank + " | Simple Interest: ₹" + si);
+    }
+}
+
+public class Lab04_Q15 {
+    public static void main(String[] args) {
+        System.out.println("--- Q15: Simple Interest Calculation ---");
+        SimpleInterest si = new SimpleInterest(10000.0, 5.5, 2.0);
+        si.calculate();
+    }
+}
+
+
+
+// Q16. Class Triangle with sides a, b, c and class variable type
+
+import java.util.Scanner;
+
+class TriangleQ16 {
+    double a, b, c;
+    static String type = "Triangle Classification";
+
+    public TriangleQ16(double a, double b, double c) {
+        this.a = a;
+        this.b = b;
+        this.c = c;
+    }
+
+    public void checkValidityAndType() {
+        if ((a + b > c) && (a + c > b) && (b + c > a)) {
+            String triType = "";
+            if (a == b && b == c) triType = "Equilateral";
+            else if (a == b || b == c || a == c) triType = "Isosceles";
+            else triType = "Scalene";
+            System.out.println("Valid Triangle! Type: " + triType);
+        } else {
+            System.out.println("Invalid Triangle sides.");
+        }
+    }
+}
+
+public class Lab04_Q16 {
+    public static void main(String[] args) {
+        System.out.println("--- Q16: Triangle Validity & Type ---");
+        TriangleQ16 t = new TriangleQ16(5, 5, 5);
+        t.checkValidityAndType();
+    }
+}
+
+
+
+// Q17. Class StudentGrade with name, marks, and class variable passingMarks
+
+import java.util.Scanner;
+
+class StudentGrade {
+    String name;
+    double marks;
+    static double passingMarks = 40.0;
+
+    public StudentGrade(String name, double marks) {
+        this.name = name;
+        this.marks = marks;
+    }
+
+    public void assignGrade() {
+        char grade;
+        if (marks >= 90) grade = 'A';
+        else if (marks >= 75) grade = 'B';
+        else if (marks >= passingMarks) grade = 'C';
+        else grade = 'F';
+
+        System.out.println("Student: " + name + " | Marks: " + marks + " | Passing Marks: " + passingMarks + " | Grade: " + grade);
+    }
+}
+
+public class Lab04_Q17 {
+    public static void main(String[] args) {
+        System.out.println("--- Q17: Student Grade Assignment ---");
+        StudentGrade sg = new StudentGrade("Anjali", 82.0);
+        sg.assignGrade();
+    }
+}
+
+
+
+// Q18. Class ElectricBill with units and class variable fixedCharge
+
+import java.util.Scanner;
+
+class ElectricBill {
+    double units;
+    static double fixedCharge = 100.0;
+
+    public ElectricBill(double units) {
+        this.units = units;
+    }
+
+    public void calculateTotal() {
+        double rate = (units <= 100) ? 3.5 : 5.0;
+        double totalBill = fixedCharge + (units * rate);
+        System.out.println("Units Consumed: " + units + " | Fixed Charge: ₹" + fixedCharge + " | Total Bill: ₹" + totalBill);
+    }
+}
+
+public class Lab04_Q18 {
+    public static void main(String[] args) {
+        System.out.println("--- Q18: Electric Bill Calculation ---");
+        ElectricBill bill = new ElectricBill(150);
+        bill.calculateTotal();
+    }
+}
+
+
+
+// Q19. Class Product with id, name, price, and class variable discountRate
+
+import java.util.Scanner;
+
+class Product {
+    int id;
+    String name;
+    double price;
+    static double discountRate = 0.10; // 10% discount
+
+    public Product(int id, String name, double price) {
+        this.id = id;
+        this.name = name;
+        this.price = price;
+    }
+
+    public void calculateFinalPrice() {
+        double finalPrice = price - (price * discountRate);
+        System.out.println("Product: " + name + " | Original Price: ₹" + price + " | Discount: 10% | Final Price: ₹" + finalPrice);
+    }
+}
+
+public class Lab04_Q19 {
+    public static void main(String[] args) {
+        System.out.println("--- Q19: Product Final Price Calculation ---");
+        Product p = new Product(10, "Wireless Mouse", 1200.0);
+        p.calculateFinalPrice();
+    }
+}
+
+
+
+// Q20. Class BankAccount with balance and class variable bankCode ensuring withdrawal limit
+
+import java.util.Scanner;
+
+class BankAccountQ20 {
+    double balance;
+    static String bankCode = "COER001";
+
+    public BankAccountQ20(double balance) {
+        this.balance = balance;
+    }
+
+    public void withdraw(double amount) {
+        if (amount <= balance) {
+            balance -= amount;
+            System.out.println("Bank Code: " + bankCode + " | Withdrawn: ₹" + amount + " | Remaining Balance: ₹" + balance);
+        } else {
+            System.out.println("Withdrawal failed! Amount exceeds available balance of ₹" + balance);
+        }
+    }
+}
+
+public class Lab04_Q20 {
+    public static void main(String[] args) {
+        System.out.println("--- Q20: BankAccount Withdrawal Limit Check ---");
+        BankAccountQ20 acc = new BankAccountQ20(8000.0);
+        acc.withdraw(3000.0);
+        acc.withdraw(7000.0);
+    }
+}
+
+
+
+// Q21. Class Palindrome check with class variable countChecks
+
+import java.util.Scanner;
+
+class PalindromeChecker {
+    static int countChecks = 0;
+
+    public void checkPalindrome(int num) {
+        countChecks++;
+        int original = num, rev = 0;
+        while (num > 0) {
+            rev = rev * 10 + (num % 10);
+            num /= 10;
+        }
+        boolean isPal = (original == rev);
+        System.out.println("Number " + original + " is palindrome: " + isPal + " | Total Checks: " + countChecks);
+    }
+}
+
+public class Lab04_Q21 {
+    public static void main(String[] args) {
+        System.out.println("--- Q21: Palindrome Checker ---");
+        PalindromeChecker pc = new PalindromeChecker();
+        pc.checkPalindrome(121);
+        pc.checkPalindrome(123);
+    }
+}
+
+
+
+// Q22. Class Armstrong check with class variable totalChecks
+
+import java.util.Scanner;
+
+class ArmstrongChecker {
+    static int totalChecks = 0;
+
+    public void checkArmstrong(int num) {
+        totalChecks++;
+        int original = num, sum = 0, digits = 0;
+        int t = num;
+        while (t > 0) { digits++; t /= 10; }
+        t = num;
+        while (t > 0) {
+            int d = t % 10;
+            sum += Math.pow(d, digits);
+            t /= 10;
+        }
+        boolean isArm = (sum == original);
+        System.out.println("Number " + original + " is Armstrong: " + isArm + " | Total Checks: " + totalChecks);
+    }
+}
+
+public class Lab04_Q22 {
+    public static void main(String[] args) {
+        System.out.println("--- Q22: Armstrong Checker ---");
+        ArmstrongChecker ac = new ArmstrongChecker();
+        ac.checkArmstrong(153);
+        ac.checkArmstrong(100);
+    }
+}
+
+
+
+// Q23. Class PrimeChecker with class variable totalPrimeChecks
+
+import java.util.Scanner;
+
+class PrimeChecker {
+    static int totalPrimeChecks = 0;
+
+    public void checkPrime(int num) {
+        totalPrimeChecks++;
+        boolean isPrime = true;
+        if (num <= 1) isPrime = false;
+        for (int i = 2; i <= Math.sqrt(num); i++) {
+            if (num % i == 0) {
+                isPrime = false;
+                break;
+            }
+        }
+        System.out.println("Number " + num + " is prime: " + isPrime + " | Total Prime Checks: " + totalPrimeChecks);
+    }
+}
+
+public class Lab04_Q23 {
+    public static void main(String[] args) {
+        System.out.println("--- Q23: Prime Checker ---");
+        PrimeChecker pr = new PrimeChecker();
+        pr.checkPrime(17);
+        pr.checkPrime(4);
+    }
+}
+
+
+
+// Q24. Class Fibonacci with class variable seriesCount
+
+import java.util.Scanner;
+
+class FibonacciGen {
+    static int seriesCount = 0;
+
+    public void generate(int n) {
+        seriesCount++;
+        long t1 = 0, t2 = 1;
+        System.out.print("Fibonacci (" + n + terms): ");
+        for (int i = 1; i <= n; i++) {
+            System.out.print(t1 + " ");
+            long sum = t1 + t2;
+            t1 = t2;
+            t2 = sum;
+        }
+        System.out.println(" | Series Generated Count: " + seriesCount);
+    }
+}
+
+public class Lab04_Q24 {
+    public static void main(String[] args) {
+        System.out.println("--- Q24: Fibonacci Generator ---");
+        FibonacciGen fg = new FibonacciGen();
+        fg.generate(10);
+    }
+}
+
+
+
+// Q25. Class Factorial with class variable totalCalls
+
+import java.util.Scanner;
+
+class FactorialCalc {
+    static int totalCalls = 0;
+
+    public long compute(int n) {
+        totalCalls++;
+        long fact = 1;
+        for (int i = 1; i <= n; i++) fact *= i;
+        System.out.println("Factorial of " + n + " = " + fact + " | Total Calls: " + totalCalls);
+        return fact;
+    }
+}
+
+public class Lab04_Q25 {
+    public static void main(String[] args) {
+        System.out.println("--- Q25: Factorial Calculator ---");
+        FactorialCalc fc = new FactorialCalc();
+        fc.compute(5);
+        fc.compute(6);
+    }
+}
+
+
+
+// Q26. Class Matrix for 2x2 matrix operations with class variable matrixType
+
+import java.util.Scanner;
+
+class Matrix2x2 {
+    int[][] mat = new int[2][2];
+    static String matrixType = "Square 2x2 Matrix";
+
+    public Matrix2x2(int a, int b, int c, int d) {
+        mat[0][0] = a; mat[0][1] = b;
+        mat[1][0] = c; mat[1][1] = d;
+    }
+
+    public void add(Matrix2x2 other) {
+        System.out.println("Type: " + matrixType + " Addition Result:");
+        for (int i = 0; i < 2; i++) {
+            for (int j = 0; j < 2; j++) {
+                System.out.print((this.mat[i][j] + other.mat[i][j]) + " ");
+            }
+            System.out.println();
+        }
+    }
+}
+
+public class Lab04_Q26 {
+    public static void main(String[] args) {
+        System.out.println("--- Q26: 2x2 Matrix Addition ---");
+        Matrix2x2 m1 = new Matrix2x2(1, 2, 3, 4);
+        Matrix2x2 m2 = new Matrix2x2(5, 6, 7, 8);
+        m1.add(m2);
+    }
+}
+
+
+
+// Q27. Class StringReverse with class variable totalReversals
+
+import java.util.Scanner;
+
+class StringReverser {
+    static int totalReversals = 0;
+
+    public void reverse(String str) {
+        totalReversals++;
+        String rev = new StringBuilder(str).reverse().toString();
+        System.out.println("Original: " + str + " | Reversed: " + rev + " | Total Reversals: " + totalReversals);
+    }
+}
+
+public class Lab04_Q27 {
+    public static void main(String[] args) {
+        System.out.println("--- Q27: String Reverser ---");
+        StringReverser sr = new StringReverser();
+        sr.reverse("COER University");
+    }
+}
+
+
+
+// Q28. Class WordCounter with class variable language
+
+import java.util.Scanner;
+
+class WordCounter {
+    static String language = "English";
+
+    public void countWords(String sentence) {
+        String[] words = sentence.trim().split("\s+");
+        int count = sentence.trim().isEmpty() ? 0 : words.length;
+        System.out.println("Language: " + language + " | Sentence: '" + sentence + "' | Word Count: " + count);
+    }
+}
+
+public class Lab04_Q28 {
+    public static void main(String[] args) {
+        System.out.println("--- Q28: Word Counter ---");
+        WordCounter wc = new WordCounter();
+        wc.countWords("Foundations of Java Development Lab Sheet 04");
+    }
+}
+
+
+
+// Q29. Class Employee salary comparison with class variable organization
+
+import java.util.Scanner;
+
+class EmployeeSalaryComp {
+    String name;
+    double salary;
+    static String organization = "COER Group";
+
+    public EmployeeSalaryComp(String name, double salary) {
+        this.name = name;
+        this.salary = salary;
+    }
+
+    public void compare(EmployeeSalaryComp other) {
+        System.out.println("Organization: " + organization);
+        if (this.salary > other.salary) {
+            System.out.println(this.name + " earns more than " + other.name);
+        } else if (this.salary < other.salary) {
+            System.out.println(other.name + " earns more than " + this.name);
+        } else {
+            System.out.println(this.name + " and " + other.name + " earn equal salaries.");
+        }
+    }
+}
+
+public class Lab04_Q29 {
+    public static void main(String[] args) {
+        System.out.println("--- Q29: Employee Salary Comparison ---");
+        EmployeeSalaryComp e1 = new EmployeeSalaryComp("Salik", 55000);
+        EmployeeSalaryComp e2 = new EmployeeSalaryComp("Aman", 48000);
+        e1.compare(e2);
+    }
+}
+
+
+
+// Q30. Class Library with booksAvailable and class variable libraryName
+
+import java.util.Scanner;
+
+class Library {
+    int booksAvailable;
+    static String libraryName = "Central Library COER";
+
+    public Library(int booksAvailable) {
+        this.booksAvailable = booksAvailable;
+    }
+
+    public void issueBook() {
+        if (booksAvailable > 0) {
+            booksAvailable--;
+            System.out.println("Library: " + libraryName + " | Book issued. Remaining books: " + booksAvailable);
+        } else {
+            System.out.println("No books available to issue!");
+        }
+    }
+
+    public void returnBook() {
+        booksAvailable++;
+        System.out.println("Library: " + libraryName + " | Book returned. Available books: " + booksAvailable);
+    }
+}
+
+public class Lab04_Q30 {
+    public static void main(String[] args) {
+        System.out.println("--- Q30: Library Issue and Return Operations ---");
+        Library lib = new Library(5);
+        lib.issueBook();
+        lib.returnBook();
+    }
+}
